@@ -1,27 +1,5 @@
+import sys
 import math
-
-def day20b():
-    presents = 0
-    i = 9
-    while (presents < 29000000):
-        i += 1
-        presents = 0
-        for d in divisorGenerator(i):
-            if i/d <= 50:
-                presents += d * 11
-
-    print (i)
-
-def day20a():
-    presents = 0
-    i = 9
-    while (presents < 29000000):
-        i += 1
-        presents = 0
-        for d in divisorGenerator(i):
-            presents += d * 10
-
-    print (i)
 
 def divisorGenerator(n):
     large_divisors = []
@@ -32,3 +10,33 @@ def divisorGenerator(n):
                 large_divisors.append(n / i)
     for divisor in reversed(large_divisors):
         yield divisor
+
+def day20a():
+    with open(sys.argv[1]) as f:
+        data = int(f.readlines()[0])
+        presents = 0
+        i = 9
+        while (presents < data):
+            i += 1
+            presents = 0
+            for d in divisorGenerator(i):
+                presents += d * 10
+
+        print (i)
+
+def day20b():
+    with open(sys.argv[1]) as f:
+        data = int(f.readlines()[0])
+        presents = 0
+        i = 9
+        while (presents < data):
+            i += 1
+            presents = 0
+            for d in divisorGenerator(i):
+                if i/d <= 50:
+                    presents += d * 11
+
+        print (i)
+
+day20a()
+day20b()
