@@ -1,6 +1,10 @@
+import sys
 import math
 
-puzzle = 289326
+puzzle = 0
+with open(sys.argv[1], 'r') as f:
+    puzzle = int(f.readlines()[0])
+
 top = int(math.sqrt(puzzle))
 if top**2 != puzzle:
     top += 1

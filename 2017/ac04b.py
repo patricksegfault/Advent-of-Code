@@ -1,4 +1,6 @@
-with open('input04a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     totalValid = 0
     for line in inFile:
         line = line.strip().split()

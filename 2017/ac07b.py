@@ -1,4 +1,6 @@
-def rec7b(disc, found = 0):
+import sys
+
+def rec7b(disc, found = 0): #Need to fix
     curDiscLink = discLinks[disc]
     sums = []
     linkList = []
@@ -20,16 +22,17 @@ def rec7b(disc, found = 0):
     return sum(sums), found
     
 
-with open('input07a.txt', 'r') as inFile:
-    bottom = 'vtzay'
+with open(sys.argv[1], 'r') as inFile:
+    with open(sys.argv[2], 'r') as inFile2:
+        bottom = inFile2.readlines()[0]
 
-    allDiscs = {}
-    discLinks = {}
-    for line in inFile:
-        line = line.strip().replace(',','').split()
-        allDiscs[line[0]] = int(line[1][1:-1])
-        if len(line) > 2:
-            discLinks[line[0]] = ()
-            for i in range(3,len(line)):
-                discLinks[line[0]] += (line[i],)
-    rec7b(bottom)
+        allDiscs = {}
+        discLinks = {}
+        for line in inFile:
+            line = line.strip().replace(',','').split()
+            allDiscs[line[0]] = int(line[1][1:-1])
+            if len(line) > 2:
+                discLinks[line[0]] = ()
+                for i in range(3,len(line)):
+                    discLinks[line[0]] += (line[i],)
+        rec7b(bottom)

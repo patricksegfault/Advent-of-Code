@@ -1,6 +1,7 @@
+import sys
 import re
 
-with open('input09a.txt', 'r') as inFile:
+with open(sys.argv[1], 'r') as inFile:
     for line in inFile:
         line = line.strip()
         line = re.sub('!.','',line)

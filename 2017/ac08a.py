@@ -1,4 +1,6 @@
-with open('input08a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     allRegs = {}
     for line in inFile:
         reg, incDec, val, __, regCheck, oper, valCheck = line.strip().split()

@@ -1,4 +1,6 @@
-with open('input07a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     allDiscs = set()
     topDiscs = set()
     for line in inFile:

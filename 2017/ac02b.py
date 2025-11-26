@@ -1,4 +1,6 @@
-with open('input02a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     total = 0
     for line in inFile:
         line = list(map(int, line.strip().split()))

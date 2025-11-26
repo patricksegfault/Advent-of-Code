@@ -1,4 +1,6 @@
-with open('input08a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     allRegs = {}
     totalMax = 0
     for line in inFile:

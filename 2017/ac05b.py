@@ -1,4 +1,6 @@
-with open('input05a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     inst = []
     loc = 0
     for line in inFile:

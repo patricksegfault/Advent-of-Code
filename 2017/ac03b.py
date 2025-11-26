@@ -1,4 +1,8 @@
-puzzle = 289326
+import sys
+
+puzzle = 0
+with open(sys.argv[1], 'r') as f:
+    puzzle = int(f.readlines()[0])
 spiral = {(0,0):1}
 directions = [(0,1),(-1,0),(0,-1),(1,0)]
 adjacentDirs = [(0,1),(-1,0),(0,-1),(1,0),(1,1),(-1,-1),(1,-1),(-1,1)]

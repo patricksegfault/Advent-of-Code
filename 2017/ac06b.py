@@ -1,4 +1,6 @@
-with open('input06a.txt', 'r') as inFile:
+import sys
+
+with open(sys.argv[1], 'r') as inFile:
     for line in inFile:
         steps = 0
         state = list(map(int,line.strip().split()))
