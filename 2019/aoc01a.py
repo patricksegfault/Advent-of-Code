@@ -1,4 +1,6 @@
-with open("input01.in", "r") as file:
+import sys
+
+with open(sys.argv[1], "r") as file:
     total = 0
     remainders = 0
     count = 0
