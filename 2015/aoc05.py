@@ -18,8 +18,15 @@ def day5a():
 def day5b():
     with open(sys.argv[1]) as f:
         data = f.readlines()
+        nice = 0
+        doubPair = re.compile(r".*([a-z][a-z]).*\1.*")
+        skipPair = re.compile(r".*([a-z]).\1.*")
 
-        print("")
+        for w in data:
+            if (doubPair.match(w) and skipPair.match(w)):
+                nice += 1
+
+        print (nice)
 
 day5a()
 day5b()
