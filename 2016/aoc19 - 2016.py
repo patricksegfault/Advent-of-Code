@@ -1,10 +1,13 @@
-pInput = 3001330
+import sys
 
-def partOne():
+def partOne(pInput):
     return 2*(pInput - 2**(pInput.bit_length() - 1)) + 1
 
-def partTwo():
+def partTwo(pInput):
     return 'err'
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+with open(sys.argv[1], 'r') as f:
+    pInput = int(f.readlines()[0])
+
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))

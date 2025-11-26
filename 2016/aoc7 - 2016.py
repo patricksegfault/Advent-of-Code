@@ -1,10 +1,6 @@
+import sys
 import collections
 import re
-
-pInput = []
-with open('aoc7Input.txt', 'r') as fp:
-   for line in fp:
-       pInput.append([field for field in re.split('\W+', line.strip())])
 
 def abba(seq):
     abbaSeq = False
@@ -39,7 +35,7 @@ def abba(seq):
             
     return abbaSeq
 
-def partOne():
+def partOne(pInput):
     count = 0
 
     for line in pInput:
@@ -61,8 +57,13 @@ def partOne():
     
     return count
 
-def partTwo():
+def partTwo(pInput):
     return 'err'
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+pInput = []
+with open(sys.argv[1], 'r') as fp:
+   for line in fp:
+       pInput.append([field for field in re.split('\\W+', line.strip())])
+
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))

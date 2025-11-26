@@ -1,13 +1,6 @@
-pInput = ''
-with open('aoc3Input.txt', 'r') as f:
-    pInput = f.read().split('\n')
-    i = 0
-    for p in pInput:
-        p = p.strip()
-        pInput[i] = p.split(' ')
-        i += 1
+import sys
 
-def partOne():
+def partOne(pInput):
     tPossible = 0
     for triangle in pInput:
         allSides = []
@@ -21,7 +14,7 @@ def partOne():
             
     return tPossible
 
-def partTwo():
+def partTwo(pInput):
     tPossible = 0
     tGroup = 0
     allSides = []
@@ -50,7 +43,14 @@ def partTwo():
             
     return tPossible
 
+pInput = ''
+with open(sys.argv[1], 'r') as f:
+    pInput = f.readlines()
+    i = 0
+    for p in pInput:
+        p = p.strip()
+        pInput[i] = p.split(' ')
+        i += 1
 
-
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))

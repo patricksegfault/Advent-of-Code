@@ -1,11 +1,7 @@
+import sys
 import collections
 
-pInput = []
-with open('aoc6Input.txt', 'r') as fp:
-   for line in fp:
-       pInput.append(line.strip())
-
-def partOne():
+def partOne(pInput):
     rotated = zip(*pInput[::-1])
     word = ''
     for w in rotated:
@@ -13,7 +9,7 @@ def partOne():
     
     return word
 
-def partTwo():
+def partTwo(pInput):
     rotated = zip(*pInput[::-1])
     word = ''
     for w in rotated:
@@ -21,5 +17,10 @@ def partTwo():
     
     return word
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+pInput = []
+with open(sys.argv[1], 'r') as fp:
+   for line in fp:
+       pInput.append(line.strip())
+
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))

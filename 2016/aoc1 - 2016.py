@@ -1,8 +1,6 @@
-dirInput = 'L1, R3, R1, L5, L2, L5, R4, L2, R2, R2, L2, R1, L5, R3, L4, L1, L2, R3, R5, L2, R5, L1, R2, L5, R4, R2, R2, L1, L1, R1, L3, L1, R1, L3, R5, R3, R3, L4, R4, L2, L4, R1, R1, L193, R2, L1, R54, R1, L1, R71, L4, R3, R191, R3, R2, L4, R3, R2, L2, L4, L5, R4, R1, L2, L2, L3, L2, L1, R4, R1, R5, R3, L5, R3, R4, L2, R3, L1, L3, L3, L5, L1, L3, L3, L1, R3, L3, L2, R1, L3, L1, R5, R4, R3, R2, R3, L1, L2, R4, L3, R1, L1, L1, R5, R2, R4, R5, L1, L1, R1, L2, L4, R3, L1, L3, R5, R4, R3, R3, L2, R2, L1, R4, R2, L3, L4, L2, R2, R2, L4, R3, R5, L2, R2, R4, R5, L2, L3, L2, R5, L4, L2, R3, L5, R2, L1, R1, R3, R3, L5, L2, L2, R5'
-inp = dirInput.split(', ')
-#directs = ['N', 'E', 'S', 'W']
+import sys
 
-def partOne():
+def partOne(inp):
     directsIndex = 0
     x = 0
     y = 0
@@ -31,7 +29,7 @@ def partOne():
 
     return abs(x) + abs(y)
 
-def partTwo():
+def partTwo(inp):
     directsIndex = 0
     x = 0
     y = 0
@@ -91,6 +89,9 @@ def partTwo():
 
     return final
 
+with open(sys.argv[1], 'r') as f:
+    dirInput = f.readlines()[0]
+    inp = dirInput.split(', ')
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+print("Part One Answer: " + str(partOne(inp)))
+print("Part Two Answer: " + str(partTwo(inp)))

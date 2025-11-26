@@ -1,8 +1,7 @@
+import sys
 import hashlib
 
-pInput = "wtnhxymk"
-
-def partOne():
+def partOne(pInput):
     password = ""
     i = 0
 
@@ -16,7 +15,7 @@ def partOne():
 
     return password
 
-def partTwo():
+def partTwo(pInput):
     password = list("--------")
     passLen = 0
     i = 0
@@ -33,5 +32,8 @@ def partTwo():
 
     return ''.join(password)
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+with open(sys.argv[1], 'r') as f:
+    pInput = f.readlines()[0]
+
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))

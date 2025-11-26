@@ -1,12 +1,8 @@
+import sys
 import re
 import collections
 
-pInput = []
-with open('aoc4Input.txt', 'r') as fp:
-   for line in fp:
-       pInput.append([field.strip(']\n') for field in re.split('[\-\[]', line)])
-
-def partOne():
+def partOne(pInput):
     idSum = 0
     for room in pInput:
         name = ''
@@ -29,7 +25,7 @@ def partOne():
         
     return idSum
 
-def partTwo():
+def partTwo(pInput):
     roomId = -1
 
     for room in pInput:
@@ -42,5 +38,11 @@ def partTwo():
     
     return roomId
 
-print("Part One Answer: " + str(partOne()))
-print("Part Two Answer: " + str(partTwo()))
+pInput = []
+with open(sys.argv[1], 'r') as fp:
+   for line in fp:
+       pInput.append([field.strip(']\n') for field in re.split('[\\-\\[]', line)])
+
+
+print("Part One Answer: " + str(partOne(pInput)))
+print("Part Two Answer: " + str(partTwo(pInput)))
