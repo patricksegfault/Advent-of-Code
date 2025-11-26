@@ -1,25 +1,30 @@
-global num_list
-global curVal
-global found
-num_list = {0:1}
-curVal = 0
-found = False
+import sys
 
-def read_loop():
-    global num_list
-    global curVal
-    global found
-    with open("input01.txt", "r") as file:
-        for line in file:
+def day01a():
+    with open(sys.argv[1], "r") as file:
+        data = file.readlines()
+        freq = 0
+        for line in data:
             num = int(line)
-            curVal += num
-            if curVal in num_list:
-                print (curVal)
-                found = True
-                return
-            num_list[curVal] = 1
-    return
+            freq += num
 
+        print(freq)
 
-while(not found):
-    read_loop()
+def day01b():
+    found = False
+    freqList = {0:1}
+    freq = 0
+    while(not found):
+        with open(sys.argv[1], "r") as file:
+            data = file.readlines()
+            for line in data:
+                num = int(line)
+                freq += num
+                if freq in freqList:
+                    found = True
+                    break
+                freqList[freq] = 1
+    print(freq)
+
+day01a()
+day01b()

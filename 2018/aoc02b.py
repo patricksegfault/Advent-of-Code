@@ -1,3 +1,5 @@
+import sys
+
 packages = []
 
 def sameLetters(a, b):
@@ -7,7 +9,7 @@ def sameLetters(a, b):
             ans = ans + char
     print (ans)
 
-with open("input02.txt", "r") as file:
+with open(sys.argv[1], "r") as file:
     for line in file:
         line = line.strip()
         for p in packages:

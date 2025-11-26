@@ -1,8 +1,9 @@
+import sys
 import numpy as np
 
-fabric = [[0] * 1000] * 1000
+fabric =  [[ 0 for i in range(1000) ] for k in range(1000) ]
 
-with open("input03.txt", "r") as file:
+with open(sys.argv[1], "r") as file:
     for line in file:
         line = line.strip().replace(',',' ').replace(':','').replace('x',' ').split(' ')
         x = int(line[2])

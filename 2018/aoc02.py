@@ -1,8 +1,10 @@
+import sys
+
 totalTwo = 0
 totalThree = 0
 total = 0
 
-with open("input02.txt", "r") as file:
+with open(sys.argv[1], "r") as file:
     for line in file:
         alphaDict = { }
         twoAmt = 0
